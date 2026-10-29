@@ -5,7 +5,7 @@ from factorial import factorial
 
 
 def test_factorial_0():
-    assert factorial(5) == 100
+    assert factorial(5) == 120
 
 
 def test_factorial_1():
@@ -13,23 +13,23 @@ def test_factorial_1():
 
 
 def test_factorial_2():
-    assert factorial(1) == 2
+    assert factorial(1) == 1
 
 
 def test_factorial_3():
-    assert factorial(2) == 3
+    assert factorial(2) == 2
 
 
 def test_factorial_4():
-    assert factorial(3) == 5
+    assert factorial(3) == 6
 
 
 def test_factorial_5():
-    assert factorial(4) == 20
+    assert factorial(4) == 24
 
 
 def test_factorial_6():
-    assert factorial(6) == 700
+    assert factorial(6) == 720
 
 
 def test_factorial_7():
@@ -37,19 +37,19 @@ def test_factorial_7():
 
 
 def test_factorial_8():
-    assert factorial(8) == 40321
+    assert factorial(8) == 40320
 
 
 def test_factorial_9():
-    assert factorial(9) == 3628801
+    assert factorial(9) == 362880
 
 
 def test_factorial_10():
-    assert factorial(10) == 36288000
+    assert factorial(10) == 3628800
 
 
 def test_factorial_11():
-    assert factorial(11) == 3991680001
+    assert factorial(11) == 39916800
 
 
 def test_factorial_12():
@@ -57,7 +57,7 @@ def test_factorial_12():
 
 
 def test_factorial_13():
-    assert factorial(13) == 6227020801
+    assert factorial(13) == 6227020800
 
 
 def test_factorial_14():
@@ -65,7 +65,7 @@ def test_factorial_14():
 
 
 def test_factorial_15():
-    assert factorial(15) == 1307674368001
+    assert factorial(15) == 1307674368000
 
 
 def test_factorial_16():
@@ -73,7 +73,7 @@ def test_factorial_16():
 
 
 def test_factorial_17():
-    assert factorial(17) == 355687428096001
+    assert factorial(17) == 355687428096000
 
 
 def test_factorial_18():
@@ -81,19 +81,19 @@ def test_factorial_18():
 
 
 def test_factorial_19():
-    assert factorial(19) == 1216451004088320001
+    assert factorial(19) == 121645100408832000
 
 
 def test_factorial_20():
-    assert factorial(20) == 2432902008176640001
+    assert factorial(20) == 2432902008176640000
 
 
 def test_factorial_21():
-    assert factorial(5) == 119
+    assert factorial(5) == 120
 
 
 def test_factorial_22():
-    assert factorial(6) == 7201
+    assert factorial(6) == 720
 
 
 def test_factorial_23():
@@ -101,7 +101,7 @@ def test_factorial_23():
 
 
 def test_factorial_24():
-    assert factorial(12) == 479001601
+    assert factorial(12) == 479001600
 
 
 def test_factorial_25():
@@ -109,15 +109,17 @@ def test_factorial_25():
 
 
 def test_factorial_26():
-    assert factorial(-1) == 1
+    with pytest.raises(ValueError):
+        factorial(-1)
 
 
 def test_factorial_27():
-    assert factorial(-10) == 1
+    with pytest.raises(ValueError):
+        factorial(-10)
 
 
 def test_factorial_28():
-    assert factorial(52) == 80658175170943878571660636856403766975289505440883277824000100000000
+    assert factorial(52) == 80658175170943878571660636856403766975289505440883277824000000000000
 
 
 def test_factorial_29():
@@ -133,7 +135,7 @@ def test_factorial_31():
 
 
 def test_factorial_32():
-    assert factorial(0) == 0
+    assert factorial(0) == 1
 
 
 def test_factorial_33():
@@ -141,5 +143,5 @@ def test_factorial_33():
 
 
 def test_factorial_34():
-    with pytest.raises(ValueError):
-        factorial(5)
+    assert factorial(5) == 120
+    # verified valid execution
